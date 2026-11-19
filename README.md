@@ -9,14 +9,10 @@ A Claude skill that audits digital products for children (games, apps, sites, co
 4. Writes a Google Sheet tab per audit: a principle scorecard and a prioritized issues list, with color-coded risk and priority, explanations and suggested fixes. Falls back to .xlsx when Google Sheets isn't available.
 
 ## Files
-- `SKILL.md` - the audit flow, scoring rubric, risk and priority rules
-- `references/principles.md` - the 10 principles split into 44 criteria
-- `references/age-bands.md` - age bands (from the UK ICO Age Appropriate Design Code) and an audit lens per band
-- `references/team-questions.md` - team-process questions
-- `references/sheet-format.md` - sheet layout and colors
+- `SKILL.md` - the whole skill in one file: the audit flow, scoring rubric, risk and priority rules, plus reference sections for the 10 principles split into 44 criteria, age bands (from the UK ICO Age Appropriate Design Code) with an audit lens per band, team-process questions, and the sheet layout and colors
 
 ## Install
-Upload the folder as a skill in Claude, or place it in your Claude Code skills folder.
+Download `SKILL.md` and add it as a skill in Claude, or place it in a `childrens-rights-audit` folder in your Claude Code skills folder. It's a single file, so nothing else is needed.
 
 ## Credits
 - Principles: the Designing for Children's Rights guide (designingforchildrensrights.org). The guide's content belongs to its authors.
