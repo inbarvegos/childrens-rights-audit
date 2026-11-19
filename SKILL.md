@@ -80,7 +80,7 @@ Sort the issues by priority, then by score (lowest first).
 
 ## 5. Principle scorecard
 
-For each of the 10 principles: the average of its scored criteria (excluding N/A and Not verified, to one decimal place), the **lowest criterion** and its score, the highest risk among its criteria, the counts of N/A and Not verified, and a one-line summary. The lowest criterion is always shown so an average cannot hide a serious failure.
+For each of the 10 principles: the average of its scored criteria (excluding N/A and Not verified, to one decimal place), the **weakest point** (the lowest-scoring criterion and its score, for example `7.4 Report and block content: 2`), the **highest risk** among its criteria with the counts of N/A and Not verified criteria added to the same cell (for example `Medium · 1 N/A · 2 not verified`), and a one-line summary. The weakest point is always shown so an average cannot hide a serious failure.
 
 ## 6. Output to Google Sheets
 
@@ -226,8 +226,10 @@ Ask all of them in one message. Any question can be skipped; criteria that depen
 - A3: `Scale: 1 = completely against the principle, 10 = fully upholds it`
 
 **Scorecard section** (starts at row 5)
-Columns: `Principle` | `Average score` | `Lowest criterion` | `Lowest score` | `Highest risk` | `N/A` | `Not verified` | `Summary`
-One row per principle (10 rows). Color the `Highest risk` cell.
+Columns: `Principle` | `Average score` | `Weakest point` | `Highest risk` | `Summary`
+One row per principle (10 rows).
+- `Weakest point`: the lowest-scoring criterion as `<ID> <short name>: <score>`, for example `7.4 Report and block content: 2`.
+- `Highest risk`: the highest risk level, followed by any unscored criteria, for example `Medium · 1 N/A · 2 not verified`. Leave out the parts that are zero. If no criterion in the principle was scored, write `Not scored · <counts>`. Color the cell by the risk level (grey if not scored).
 
 **Issues section** (two empty rows after the scorecard)
 Columns: `ID` | `Issue` | `Explanation` | `Principle` | `Criterion` | `Score` | `Risk` | `Fix effort` | `Priority` | `Suggested fix` | `Location` | `Evidence basis`
